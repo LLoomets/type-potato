@@ -1,37 +1,36 @@
-import React, { FormEvent, useEffect, useState } from 'react';
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
-import Stack from '@mui/material/Stack';
+import React, { FormEvent, useEffect, useState } from "react"
+import Box from "@mui/material/Box"
+import TextField from "@mui/material/TextField"
+import Button from "@mui/material/Button"
+import Stack from "@mui/material/Stack"
 
 const MyForm = () => {
+  const [form, setForm] = useState({ username: "", password: "" })
 
-    const [form, setForm] = useState({ username:"", password:""});
-
-    /* const [username, setUsername] = useState("");
+  /* const [username, setUsername] = useState("");
     const [password, setPassword] = useState(""); */
 
-    const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
 
-        console.log(form);
+    console.log(form)
 
-        /* console.log({ username, password }); */
-    };
+    /* console.log({ username, password }); */
+  }
 
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        /* setForm(prevForm => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    /* setForm(prevForm => {
             return {
             }
         }) */
 
-        setForm(prevForm => ({
-            ...prevForm,
-            [event.target.name]: event.target.value
-        }));
-    };
+    setForm(prevForm => ({
+      ...prevForm,
+      [event.target.name]: event.target.value,
+    }))
+  }
 
-    /* useEffect(() => {
+  /* useEffect(() => {
         console.log("Renders every time");
     });
 
@@ -45,40 +44,43 @@ const MyForm = () => {
 
   return (
     <Box
-        sx={{ 
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'column',
-            height: '100vh'
-         }}
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "column",
+        height: "100vh",
+      }}
     >
-        <form onSubmit={handleSubmit}>
-            <Stack gap={2}>
-                <TextField
-                required
-                name='username'
-                id="outlined-required"
-                label="Username"
-                /* onChange={(event) => setUsername(event.target.value)} */
-                onChange={handleChange}
-                />
+      <form onSubmit={handleSubmit}>
+        <Stack gap={2}>
+          <TextField
+            required
+            name="username"
+            id="outlined-required"
+            label="Username"
+            /* onChange={(event) => setUsername(event.target.value)} */
+            onChange={handleChange}
+          />
 
-                <TextField
-                required
-                name='password'
-                id="outlined-required"
-                label="Password"
-                /* onChange={(event) => setPassword(event.target.value)} */
-                onChange={handleChange}
-                />
+          <TextField
+            required
+            name="password"
+            id="outlined-required"
+            label="Password"
+            /* onChange={(event) => setPassword(event.target.value)} */
+            onChange={handleChange}
+          />
 
-                <Button variant="contained" type='submit'>Login</Button>
-            </Stack>
-        </form>
-        
+          <Button
+            variant="contained"
+            type="submit"
+          >
+            Login
+          </Button>
+        </Stack>
+      </form>
     </Box>
-    
   )
 }
 

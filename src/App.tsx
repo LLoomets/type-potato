@@ -1,7 +1,7 @@
-import React from 'react';
-import './App.css';
-import MyForm from './components/MyForm';
-import { Outlet } from 'react-router-dom';
+import React from "react"
+import "./App.css"
+import MyForm from "./components/MyForm"
+import { Outlet } from "react-router-dom"
 
 function App() {
   return (
@@ -9,10 +9,8 @@ function App() {
       <h1>Header</h1>
       <Outlet />
       {/* <MyForm /> */}
-      
     </>
-    
-  );
+  )
 }
 
-export default App;
+export default App
