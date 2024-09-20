@@ -17,7 +17,7 @@ import About from "./components/About"
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
-      <Route path="/" element={<HomePage />} />
+      <Route index element={<HomePage />} />
       <Route path="/form" element={<MyForm />} />
       <Route path="/about" element={<About/>}/>
       <Route path="/extra" element={<h1>Extra</h1>} />
