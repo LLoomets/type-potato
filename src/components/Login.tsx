@@ -1,5 +1,6 @@
 import { Box, Button, Stack, TextField, Typography } from "@mui/material";
 import { FormEvent, useState, useEffect } from "react";
+import bgImage from "../bgImage.png"
 
 export default function MyForm() {
   const [form, setForm] = useState({ username: "", password: "" });
@@ -47,14 +48,15 @@ export default function MyForm() {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        height: "100%",
+        height: "100vh",
+        backgroundImage: `url(${bgImage})`
       }}
     >
       <form onSubmit={handleSubmit}>
         <Stack gap={2}>
           <Typography
             variant="h3"
-            sx={{ textAlign: "center", textTransform: "uppercase" }}
+            sx={{ textAlign: "center", textTransform: "uppercase", color:"white" }}
           >
             Login
           </Typography>
@@ -64,6 +66,7 @@ export default function MyForm() {
             variant="outlined"
             // onChange={(event) => setUsername(event.target.value)}
             onChange={handleChange}
+            InputProps={{ sx: { backgroundColor:"white" }}}
           />
           <TextField
             name="password"
@@ -71,8 +74,9 @@ export default function MyForm() {
             variant="outlined"
             // onChange={(event) => setPassword(event.target.value)}
             onChange={handleChange}
+            InputProps={{ sx: { backgroundColor:"white" }}}
           />
-          <Button variant="contained" type="submit">
+          <Button variant="contained" type="submit" sx={{backgroundColor:"darkblue"}}>
             Login
           </Button>
         </Stack>
